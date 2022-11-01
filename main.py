@@ -15,7 +15,9 @@ with open("Input/Names/invited_names.txt") as names:
 print(Name)
 for nam in Name:
     with open(f'Output/ReadyToSend/letter_for_{nam}.txt', mode='w') as letter:
-        letter.write(f"Dear {nam},\nYou are invited to my birthday this Saturday.\nHope you can make it!\nAngela")
+        new_letter= open("Input/Letters/starting_letter.txt")
+        read = new_letter.read().replace("[name]", nam)
+        letter.write(read)
 
 
 
